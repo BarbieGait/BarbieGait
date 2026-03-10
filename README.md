@@ -5,4 +5,4 @@ CVPR 2026
 
 [Paper]()
 
-[Project Page]()
+[Project Page](https://barbiegait.github.io/)
