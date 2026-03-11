@@ -1,7 +1,7 @@
 # BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition (CVPR 2026)
 
 <p align="center">
-  <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="85%">
+  <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="90%">
 </p>
 
 <h4 align="center">
