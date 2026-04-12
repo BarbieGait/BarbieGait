@@ -1,7 +1,7 @@
 # BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition (CVPR 2026)
 
 <p align="center">
-  <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="90%">
+  <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="100%">
 </p>
 
 <h4 align="center">
@@ -14,6 +14,71 @@
 This is the official implementation of our paper presented at CVPR 2026: We propose BarbieGait, a synthetic gait dataset where real-world subjects are uniquely mapped into a virtual engine to simulate extensive clothing changes while preserving their gait identity information. As a pioneering work, BarbieGait provides a controllable gait data generation method, enabling the production of large datasets to validate cross-clothing issues that are difficult to verify with real-world data.
 
 However, the diversity of clothing increases intra-class variance and makes one of the biggest challenges to learning cloth-invariant features under varying clothing conditions. Therefore, we propose GaitCLIF (Gait-oriented CLoth-Invariant Feature) as a robust baseline model for cross-clothing gait recognition. Through extensive experiments, we validate that our method significantly improves cross-clothing performance on BarbieGait and the existing popular gait benchmarks. We believe that BarbieGait, with its extensive cross-clothing gait data, will further advance the capabilities of gait recognition in cross-clothing scenarios and promote progress in related research.
+
+## 📂 Data Preparation
+
+### Data Directory
+
+All datasets should be placed in:
+```
+your_path/BarbieGait_data/
+```
+
+### Download and Extract
+
+1. Download data from Google Drive to `BarbieGait_data/` directory
+
+2. Decompress:
+```bash
+cd your_path/BarbieGait_data/
+
+# For tar.gz
+tar -xvzf <filename>.tar.gz
+
+# For tar.bz2
+tar -xvjf <filename>.tar.bz2
+
+# For zip
+unzip <filename>.zip
+```
+
+3. Create symlink to code directory:
+```bash
+cd your_path/BarbieGait_CVPR26_release/BarbieGait
+ln -s your_path/BarbieGait_CVPR26_release/BarbieGait_data ./BarbieGait_data
+```
+
+## 📂 Data Preprocessing
+
+This step reorganizes raw data by renaming folders according to clothing labels for easier further study.
+
+### Folder Structure
+
+```
+BarbieGait_CVPR26_release/
+├── BarbieGait/                    # GitHub cloned repository
+│   └── datasets/
+│       └── create_symlnk.py       # Symbolic link creation script
+└── BarbieGait_data/               # Raw data directory
+    ├── BarbieGait_predsil_pkl/     # Original data (personID/clothID-seqID)
+    ├── thick_label_by_nakeddiffnorm_eqchg/  # Clothing thickness labels
+    └── P2_BarbieGait_predsil_pkl/ # Output: reorganized data
+```
+
+### Usage
+
+```bash
+cd BarbieGait/datasets
+python create_symlnk.py
+```
+
+### Output Format
+
+Original folder names like `cloth00-00` are reorganized to `thick{thick_value}-{seq_in_thick}-cloth00-00`, where:
+- `thick_value`: Clothing thickness category (0-9)
+- `seq_in_thick`: Sequence index within that thickness category
+
+This reorganization groups sequences by clothing thickness, facilitating further cross-clothing research.
 
 ## ✅ TODO
 
