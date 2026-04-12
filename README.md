@@ -1,17 +1,46 @@
 # BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition (CVPR 2026)
 
+<div align="center">
+  <header class="hero">
+    <div class="wrap">
+      <div class="top">
+        <h1 class="title">BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition</h1>
+        <p class="venue">CVPR 2026</p>
+        <p class="authors">
+          <a href="https://andyen512.github.io/" target="_blank" rel="noreferrer">Qingyuan Cai</a>
+          &nbsp;·&nbsp;
+          <a href="https://housaihui.cn/" target="_blank" rel="noreferrer">Saihui Hou</a>
+          &nbsp;·&nbsp;
+          <a href="https://scholar.google.com/citations?user=O87WSxUAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Xuecai Hu</a>
+          &nbsp;·&nbsp;
+          <a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm" target="_blank" rel="noreferrer">Yongzhen Huang</a><span class="muted">*</span>
+        </p>
+        <p class="affiliations">
+          School of Artificial Intelligence, Beijing Normal University &nbsp;·&nbsp; AMAP, Alibaba Group &nbsp;·&nbsp; WATRIX.AI
+          <br />
+          <span class="muted">* Corresponding author</span>
+        </p>
+        <div>
+          <h4 align="center">
+            <a href="https://barbiegait.github.io/" target="_blank" rel="noreferrer">
+              <img src="https://img.shields.io/badge/🌐-Project%20Page-blue" alt="Project Page" />
+            </a>
+            <a href="" target="_blank" rel="noreferrer">
+              <img src="https://img.shields.io/badge/Paper-CVPR%202026-green" alt="Paper" />
+            </a>
+            <a href="" target="_blank" rel="noreferrer">
+              <img src="https://img.shields.io/badge/arXiv-BarbieGait-red" alt="arXiv" />
+            </a>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
 <p align="center">
   <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="100%">
 </p>
-
-<h4 align="center">
-    <a href="https://barbiegait.github.io/" target="_blank">[🌐Website]</a> /
-    <a href="" target="_blank">[📜Paper]</a>
-</h4>
-
-## 📖 Introduction
-
-This is the official implementation of our paper presented at CVPR 2026: We propose BarbieGait, a synthetic gait dataset where real-world subjects are uniquely mapped into a virtual engine to simulate extensive clothing changes while preserving their gait identity information. As a pioneering work, BarbieGait provides a controllable gait data generation method, enabling the production of large datasets to validate cross-clothing issues that are difficult to verify with real-world data.
 
 ## 📂 Data Preparation
 
