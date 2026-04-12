@@ -31,15 +31,7 @@ your_path/BarbieGait_data/
 2. Decompress:
 ```bash
 cd your_path/BarbieGait_data/
-
-# For tar.gz
-tar -xvzf <filename>.tar.gz
-
-# For tar.bz2
-tar -xvjf <filename>.tar.bz2
-
-# For zip
-unzip <filename>.zip
+tar -xvjf BarbieGait_predsil_pkl.tar.bz2
 ```
 
 3. Create symlink to code directory:
@@ -55,14 +47,14 @@ This step reorganizes raw data by renaming folders according to clothing labels 
 ### Folder Structure
 
 ```
-BarbieGait_CVPR26_release/
-├── BarbieGait/                    # GitHub cloned repository
-│   └── datasets/
-│       └── create_symlnk.py       # Symbolic link creation script
-└── BarbieGait_data/               # Raw data directory
-    ├── BarbieGait_predsil_pkl/     # Original data (personID/clothID-seqID)
-    ├── thick_label_by_nakeddiffnorm_eqchg/  # Clothing thickness labels
-    └── P2_BarbieGait_predsil_pkl/ # Output: reorganized data
+BarbieGait_data/
+├── BarbieGait_predsil_pkl/        # Original data (personID/clothID-seqID)
+├── thick_label_by_nakeddiffnorm_eqchg/  # Clothing thickness labels
+└── P2_BarbieGait_predsil_pkl/    # Output: reorganized data
+    └── {subject_id}/
+        └── {cloth_type}/
+            └── {view_id}/
+                `-- {view_id}.pkl
 ```
 
 ### Usage
