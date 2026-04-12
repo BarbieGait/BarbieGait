@@ -1,10 +1,8 @@
-# BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition (CVPR 2026)
-
 <div align="center">
   <header class="hero">
     <div class="wrap">
       <div class="top">
-        <h1 class="title">BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition</h1>
+        <h1 class="title">BarbieGait: An Identity-Consistent Synthetic Human Dataset<br />with Versatile Cloth-Changing for Gait Recognition</h1>
         <p class="venue">CVPR 2026</p>
         <p class="authors">
           <a href="https://andyen512.github.io/" target="_blank" rel="noreferrer">Qingyuan Cai</a>
