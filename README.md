@@ -1,40 +1,32 @@
-<div align="center">
-  <header class="hero">
-    <div class="wrap">
-      <div class="top">
-        <h1 class="title" style="font-size: 1.3em;">BarbieGait: An Identity-Consistent Synthetic Human Dataset<br />with Versatile Cloth-Changing for Gait Recognition</h1>
-        <p class="venue">CVPR 2026</p>
-        <p class="authors">
-          <a href="https://andyen512.github.io/" target="_blank" rel="noreferrer">Qingyuan Cai</a>
-          &nbsp;·&nbsp;
-          <a href="https://housaihui.cn/" target="_blank" rel="noreferrer">Saihui Hou</a>
-          &nbsp;·&nbsp;
-          <a href="https://scholar.google.com/citations?user=O87WSxUAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Xuecai Hu</a>
-          &nbsp;·&nbsp;
-          <a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm" target="_blank" rel="noreferrer">Yongzhen Huang</a><span class="muted">*</span>
-        </p>
-        <p class="affiliations">
-          School of Artificial Intelligence, Beijing Normal University &nbsp;·&nbsp; AMAP, Alibaba Group &nbsp;·&nbsp; WATRIX.AI
-          <br />
-          <span class="muted">* Corresponding author</span>
-        </p>
-        <div>
-          <h4 align="center">
-            <a href="https://barbiegait.github.io/" target="_blank" rel="noreferrer">
-              <img src="https://img.shields.io/badge/🌐-Project%20Page-blue" alt="Project Page" />
-            </a>
-            <a href="" target="_blank" rel="noreferrer">
-              <img src="https://img.shields.io/badge/Paper-CVPR%202026-green" alt="Paper" />
-            </a>
-            <a href="" target="_blank" rel="noreferrer">
-              <img src="https://img.shields.io/badge/arXiv-BarbieGait-red" alt="arXiv" />
-            </a>
-          </h4>
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
+<h1 align="center">BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition</h1>
+
+<p align="center">CVPR 2026</p>
+
+<p align="center">
+  <a href="https://andyen512.github.io/" target="_blank" rel="noreferrer">Qingyuan Cai</a>
+  &nbsp;·&nbsp;
+  <a href="https://housaihui.cn/" target="_blank" rel="noreferrer">Saihui Hou</a>
+  &nbsp;·&nbsp;
+  <a href="https://scholar.google.com/citations?user=O87WSxUAAAAJ&hl=zh-CN&oi=ao" target="_blank" rel="noreferrer">Xuecai Hu</a>
+  &nbsp;·&nbsp;
+  <a href="https://ai.bnu.edu.cn/xygk/szdw/zgj/bfed57e2f8fc4de2a6b370063517f801.htm" target="_blank" rel="noreferrer">Yongzhen Huang</a>*
+</p>
+
+<p align="center">School of Artificial Intelligence, Beijing Normal University · AMAP, Alibaba Group · WATRIX.AI</p>
+
+<p align="center">
+  <a href="https://barbiegait.github.io/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/🌐-Project%20Page-blue" alt="Project Page" />
+  </a>
+  &nbsp;
+  <a href="" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Paper-CVPR%202026-green" alt="Paper" />
+  </a>
+  &nbsp;
+  <a href="" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/arXiv-BarbieGait-red" alt="arXiv" />
+  </a>
+</p>
 
 <p align="center">
   <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="100%">
