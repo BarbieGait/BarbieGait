@@ -100,7 +100,7 @@ This reorganization groups sequences by clothing thickness, facilitating further
 
 ## ✅ TODO
 
-- [ ] Release the paper link
+- [x] Release the paper link
 - [ ] Release the BarbieGait dataset
 - [ ] Release the GaitCLIF codebase
 - [ ] Release pretrained models and configs
