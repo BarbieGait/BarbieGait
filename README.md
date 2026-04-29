@@ -39,7 +39,7 @@
 To obtain and use this dataset and its subsets, all users are required to complete the following steps:
 
 1. Download the latest agreement and complete it ([PDF](BarbieGaitGait%20Dataset%20Usage%20Agreement.pdf)).
-2. Submit it to [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com).
+2. Submit it to [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com). Please CC [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn).
 
 We will handle your requests within a week. In case you encounter any issues, please feel free to reach out to us via [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com).
 
