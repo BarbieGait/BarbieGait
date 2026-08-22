@@ -26,82 +26,52 @@
   <a href="https://arxiv.org/abs/2604.12221" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/arXiv-BarbieGait-red" alt="arXiv" />
   </a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/Andyen512/BarbieGait" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-Hugging%20Face-yellow" alt="Dataset" />
+  </a>
 </p>
 
 <p align="center">
   <img src="assets/BarbieGait.png" alt="BarbieGait main figure" width="100%">
 </p>
 
-## 📂 Data Preparation
+## Dataset Access
 
-### Download BarbieGait
+The BarbieGait dataset is hosted on [Hugging Face](https://huggingface.co/datasets/Andyen512/BarbieGait). Please fill out the access request manually. We will handle your requests within a week. In case you encounter any issues, please feel free to reach out to us via [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn).
 
-To obtain and use this dataset and its subsets, all users are required to complete the following steps:
+After obtaining the data, follow the [data preparation guide](datasets/DATA_PREPROCESSING.md) to preprocess it.
 
-1. Download the latest agreement and complete it ([PDF](BarbieGaitGait%20Dataset%20Usage%20Agreement.pdf)).
-2. Submit it to [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com). Please CC [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn).
+## Training on BarbieGait
 
-We will handle your requests within a week. In case you encounter any issues, please feel free to reach out to us via [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com), and please CC [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn).
-
-### Data Directory
-
-All datasets should be placed in:
-```
-your_path/BarbieGait_data/
-```
-
-### Download and Extract
-
-1. Download data from Google Drive to `BarbieGait_data/` directory
-
-2. Decompress:
-```bash
-cd your_path/BarbieGait_data/
-tar -xvjf BarbieGait_predsil_pkl.tar.bz2
-```
-
-3. Create symlink to code directory:
-```bash
-cd your_path/BarbieGait_CVPR26_release/BarbieGait
-ln -s your_path/BarbieGait_CVPR26_release/BarbieGait_data ./BarbieGait_data
-```
-
-## 📂 Data Preprocessing
-
-This step reorganizes raw data by renaming folders according to clothing labels for easier further study.
-
-### Folder Structure
-
-```
-BarbieGait_data/
-├── BarbieGait_predsil_pkl/        # Original data (personID/clothID-seqID)
-├── thick_label_by_nakeddiffnorm_eqchg/  # Clothing thickness labels
-└── P2_BarbieGait_predsil_pkl/    # Output: reorganized data
-    └── {subject_id}/
-        └── {cloth_type}/
-            └── {view_id}/
-                `-- {view_id}.pkl
-```
-
-### Usage
+Prepare the required P2 data view before training. The [data preparation guide](datasets/DATA_PREPROCESSING.md) covers silhouette P2 links and pose-to-heatmap conversion.
 
 ```bash
-cd BarbieGait/datasets
-python create_symlnk.py
+python datasets/create_symlnk.py --modality sil
 ```
 
-### Output Format
+### Predicted Silhouette
 
-Original folder names like `cloth00-00` are reorganized to `thick{thick_value}-{seq_in_thick}-cloth00-00`, where:
-- `thick_value`: Clothing thickness category (0-9)
-- `seq_in_thick`: Sequence index within that thickness category
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
+  --master_port 13359 --nproc_per_node=8 opengait/main.py \
+  --cfgs ./configs/gaitclif/GaitCLIF_BarbieGait_predsil_10layer_p3d_261p.yaml \
+  --phase train --log_to_file
+```
 
-This reorganization groups sequences by clothing thickness, facilitating further cross-clothing research.
+### Predicted Pose Heatmaps
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
+  --master_port 13359 --nproc_per_node=8 opengait/main.py \
+  --cfgs ./configs/gaitclif/GaitCLIF_BarbieGait_predpose_10layer_261p.yaml \
+  --phase train --log_to_file
+```
 
 ## ✅ TODO
 
 - [x] Release the paper link
-- [ ] Release the BarbieGait dataset
-- [ ] Release the GaitCLIF codebase
-- [ ] Release pretrained models and configs
-- [ ] Improve documentation and usage examples
+- [x] Release the BarbieGait predicted silhouette and 2D pose
+- [x] Release the GaitCLIF codebase
+- [x] Improve documentation and usage examples
+- [ ] Release the BarbieGait rendered ground truth silhouette and rendered RGB data

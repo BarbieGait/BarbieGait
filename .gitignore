@@ -1,0 +1,4 @@
+BarbieGait_data
+output/
+**/__pycache__/
+*.py[cod]

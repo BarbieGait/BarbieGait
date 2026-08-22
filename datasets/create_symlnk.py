@@ -1,12 +1,33 @@
+import argparse
 import os
 import json
-import pdb
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(os.path.dirname(script_dir))
+project_root = os.path.dirname(script_dir)
 
-# Symbolic link output path
-link_path = os.path.join(project_root, 'BarbieGait_data', 'P2_BarbieGait_predsil_pkl')
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--data-root',
+    default=os.path.join(project_root, 'BarbieGait_data'),
+    help='Directory containing the BarbieGait predicted-modality PKL directories.',
+)
+parser.add_argument(
+    '--modality',
+    choices=('sil', 'pose', 'heatmap'),
+    default='sil',
+    help='Predicted modality to process. Defaults to sil.',
+)
+parser.add_argument(
+    '--label-root',
+    default=os.path.join(script_dir, 'BarbieGait', 'thick_label_by_nakeddiffnorm_eqchg'),
+    help='Directory containing per-identity clothing thickness labels.',
+)
+args = parser.parse_args()
+
+data_root = os.path.abspath(args.data_root)
+label_root = os.path.abspath(args.label_root)
+pred_root = os.path.join(data_root, f'BarbieGait_pred{args.modality}_pkl')
+link_path = os.path.join(pred_root, 'P2_pkl')
 
 def custom_sort(folder_name):
     # Split folder name by "cloth index" and "suffix number"
@@ -18,15 +39,15 @@ def custom_sort(folder_name):
 
     return (cloth_number, suffix_number)
 
-data_path = os.path.join(project_root, 'BarbieGait_data', 'BarbieGait_predsil_pkl')
-thick_path = os.path.join(project_root, 'BarbieGait_data', 'thick_label_by_nakeddiffnorm_eqchg')
+data_path = os.path.join(pred_root, f'{args.modality}_pkl')
 personlist = os.listdir(data_path)
-seqnum = 0
 lacklist = []
+created_count = 0
+existing_count = 0
 for personid in personlist:
     idpath = os.path.join(data_path, personid)
     personid_int = str(int(personid))
-    thick_label_path = os.path.join(thick_path, personid_int, '{}_thick_data.json'.format(personid_int))
+    thick_label_path = os.path.join(label_root, personid, '{}_thick_data.json'.format(personid_int))
     if not os.path.exists(thick_label_path):
         lacklist.append(personid)
         continue
@@ -53,8 +74,12 @@ for personid in personlist:
             os.makedirs(newdir_parent_dir)
         try:
             os.symlink(olddir_path, newdir_path)
-            print(f'Symbolic link created: {olddir_path} -> {newdir_path}')
+            created_count += 1
+        except FileExistsError:
+            existing_count += 1
         except OSError as e:
             print(f'Failed to create symbolic link: {e}')
 
-print(lacklist)
+print(f'Created links: {created_count}')
+print(f'Existing links: {existing_count}')
+print(f'IDs without thickness labels: {len(lacklist)}')
