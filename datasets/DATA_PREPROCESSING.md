@@ -2,12 +2,7 @@
 
 ## Dataset Access
 
-To obtain and use BarbieGait and its subsets:
-
-1. Download and complete the latest dataset usage agreement.
-2. Submit it to [BNU-IVC@outlook.com](mailto:BNU-IVC@outlook.com), with [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn) copied.
-
-Dataset requests are handled within one week.
+The BarbieGait dataset is hosted on [Hugging Face](https://huggingface.co/datasets/Andyen512/BarbieGait). Please fill out the access request manually. Requests are reviewed within one week. In case you encounter any issues, please contact [caiqingyuan@mail.bnu.edu.cn](mailto:caiqingyuan@mail.bnu.edu.cn).
 
 ## Download and Layout
 

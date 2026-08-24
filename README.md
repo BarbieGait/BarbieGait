@@ -68,6 +68,26 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
   --phase train --log_to_file
 ```
 
+## Testing on BarbieGait
+
+### Predicted Silhouette
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
+  --master_port 13359 --nproc_per_node=8 opengait/main.py \
+  --cfgs ./configs/gaitclif/GaitCLIF_BarbieGait_predsil_10layer_p3d_261p.yaml \
+  --phase test --log_to_file
+```
+
+### Predicted Pose Heatmaps
+
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
+  --master_port 13359 --nproc_per_node=8 opengait/main.py \
+  --cfgs ./configs/gaitclif/GaitCLIF_BarbieGait_predpose_10layer_261p.yaml \
+  --phase test --log_to_file
+```
+
 ## ✅ TODO
 
 - [x] Release the paper link
