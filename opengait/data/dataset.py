@@ -153,9 +153,9 @@ class DataSet(tordata.Dataset):
                                 # # 高视角
                                 # if int(vie[6:]) < 8:
                                     # continue
-                                if training:
-                                    if int(cloid) > 1:
-                                        continue
+                                # if training:
+                                #     if int(cloid) > 1:
+                                #         continue
                                 # if data_config['sameid_sameseq']:
                                 #     seqid = typ.split('-')[3]
                                 #     if seqid != '00':
